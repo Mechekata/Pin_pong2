@@ -33,6 +33,20 @@ class GameSprite(pygame.sprite.Sprite):
     def update(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
         #безкінечний цикл
+
+class Player(GameSprite):
+    def __init__(self, x, y, w, h, image, speed):
+        super().__init__(x, y, w, h, image, speed)
+
+    def move(self):
+        move_ = pygame.key.get_pressed()   
+        if move_[pygame.K_w]:
+            if self.rect.y >= 0:
+                self.rect.y += self.speed   
+        if move_[pygame.K_s]:
+            if self.rect.y <= 500:
+                self.rect.y -= self.speed
+
 game = True
 finish = False
 
