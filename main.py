@@ -47,11 +47,14 @@ class Player(GameSprite):
             if self.rect.y <= 500:
                 self.rect.y -= self.speed
 
+menu = pygame.image.load('1636934079_67-bogatyr-club-p-chernii-ekran-fon-74.jpg')
+
 game = True
 finish = False
 
 while game:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     if not finish:
+        window.blit(menu(0, 0))
 
         #оброби подію «клік за кнопкою "Закрити вікно"»
         for event in pygame.event.get():
